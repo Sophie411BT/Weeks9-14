@@ -6,16 +6,21 @@ using Unity.UI;
 public class spawner_script : MonoBehaviour
 {
     public float Score;
-    public float NumOfRoaches;
-    public GameObject Roach;
-    public float roachPos;
+    public float NumOfCircles = 5f;
+    public GameObject Circles;
+    public float CirclePos;
+    public bool gameStarted = true;
 
     // Start is called before the first frame update
     void Start()
     {
-        roachPos = Random.Range(-12, 12);
-        Instantiate(Roach);
+       
+        while (gameStarted == true)
+        { 
 
+        GameObject gameObject = Instantiate(Circles, Random.insideUnitCircle * 6, transform.rotation);
+
+        }
     }
 
     // Update is called once per frame
