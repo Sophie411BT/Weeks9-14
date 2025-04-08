@@ -9,23 +9,23 @@ public class spawner_script : MonoBehaviour
     public float NumOfCircles = 5f;
     public GameObject Circles;
     public float CirclePos;
-    public bool gameStarted = true;
+   
 
     // Start is called before the first frame update
-    void Start()
-    {
+   // void Start()
+   // {
        
-        while (gameStarted == true)
-        { 
+     //   while (
+       // { 
 
-        GameObject gameObject = Instantiate(Circles, Random.insideUnitCircle * 6, transform.rotation);
+       // GameObject gameObject = Instantiate(Circles, Random.insideUnitCircle * 6, transform.rotation);
 
-        }
-    }
+      //  }
+  //  }
 
     // Update is called once per frame
-    void Update()
-    {
+   // void Update()
+   // {
         
-    }
+    //}
 }
