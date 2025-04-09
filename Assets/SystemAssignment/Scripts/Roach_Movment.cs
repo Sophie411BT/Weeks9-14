@@ -83,8 +83,9 @@ public class Roach_Movment : MonoBehaviour
             StopAllCoroutines();
             RoachCoroutine = null;
             Debug.Log("squished");
-            image.sprite = Dead; 
-
+            image.sprite = Dead;  
+            
+            
         }
     }
 

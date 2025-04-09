@@ -6,7 +6,7 @@ using UnityEngine.UI;
 
 public class Win_Screen : MonoBehaviour
 {
-    public TextMeshProUGUI ;
+    //public TextMeshProUGUI ;
 
     // Start is called before the first frame update
     void Start()

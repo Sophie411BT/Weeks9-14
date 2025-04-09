@@ -17,10 +17,11 @@ public class Score_UI : MonoBehaviour
 
     public void Start()
     {
-       // if (RoachCoroutine != null)
-       // {
+       if (RoachMovmentScript.RoachCoroutine != null)
+       {
             RoachMovmentScript.PointerClick.AddListener(AddToScore);
-       // }
+            
+       }
     }
 
     public void Update()
@@ -32,5 +33,6 @@ public class Score_UI : MonoBehaviour
     {
         Score++;
         ScoreUI.text = Score.ToString();
+        
     }
 }
