@@ -1,26 +1,36 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
+using TMPro;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Score_UI : MonoBehaviour
 {
-    public Text  ScoreUI;
+
+    
+    public TextMeshProUGUI ScoreUI;
     public int Score = 0;
-    public 
-    // Start is called before the first frame update
-    void Start()
+    public Roach_Movment RoachMovmentScript;
+
+    public void Start()
     {
-        UpdateScoreUI();
+       // if (RoachCoroutine != null)
+       // {
+            RoachMovmentScript.PointerClick.AddListener(AddToScore);
+       // }
     }
 
-   private void SpriteClicked()
+    public void Update()
     {
-        //Listen for teh sprite to be clicked in coroutine
+
     }
 
-    private void UpdateScoreUI()
+    public void AddToScore()
     {
-        ScoreUI.text = "Score: " + Score; ///
+        Score++;
+        ScoreUI.text = Score.ToString();
     }
 }

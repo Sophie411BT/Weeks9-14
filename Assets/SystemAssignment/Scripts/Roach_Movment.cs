@@ -1,10 +1,12 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.UI;
 
 public class Roach_Movment : MonoBehaviour
 {
+    public UnityEvent PointerClick;
     public float moveTime = 4f;
     public Vector2 startPos;
     public Vector2 endPos;
@@ -18,14 +20,21 @@ public class Roach_Movment : MonoBehaviour
 
     private RectTransform rect;
 
-    private Coroutine RoachCoroutine;
+    public Coroutine RoachCoroutine;
 
-    private void Start()
+    public void Start()
     {
+
         rect = GetComponent<RectTransform>();
+        //start the coroutine going from current position to endPos
         RoachCoroutine = StartCoroutine(RoachMove(transform.position, endPos));
+
+        //Add a listener so that the score scripts can track when the coroutine ends
+        PointerClick.AddListener(Squished);
+
     }
 
+    //A coroutine that usses lerp to move the sprite fron startPos to endPos, and back in a loop
     IEnumerator RoachMove(Vector2 startPos, Vector2 endPos)
     {
 
@@ -53,13 +62,14 @@ public class Roach_Movment : MonoBehaviour
             rect.position = currentPos;
 
 
-            //yield so that the loop stops
+           
            
 
-           // transform.position = endPos;
-
+          
+            //yeild at the end of the coroutine
             yield return null;
         }
+        //restart the coroutine using start pos instead of end pos so the the sprite move sin the other direction
         StartCoroutine(RoachMove(transform.position, startPos));
 
     }
