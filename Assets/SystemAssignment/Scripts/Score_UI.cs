@@ -58,7 +58,7 @@ public class Score_UI : MonoBehaviour
         {
             ScoreText.text = $"Score: {Score}";
         }
-        //if teh score is greater or = to 2 set the win screen to active in the inspector
+        //if the score is greater or = to 2 set the win screen to active in the inspector
         if (Score >= 2)
         {
 
