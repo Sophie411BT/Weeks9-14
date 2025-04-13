@@ -1,11 +1,16 @@
+using JetBrains.Annotations;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.SocialPlatforms.Impl;
 using UnityEngine.UI;
 
 public class Roach_Movment : MonoBehaviour
 {
+    //coroutine variables
     public UnityEvent PointerClick;
     public float moveTime = 4f;
     public Vector2 startPos;
@@ -13,8 +18,9 @@ public class Roach_Movment : MonoBehaviour
     public AnimationCurve curve;
     public float timeElapsed;
 
+    //image variable
     public Image image;
-
+    //sprite variables
     public Sprite Alive;
     public Sprite Dead;
 
@@ -22,15 +28,22 @@ public class Roach_Movment : MonoBehaviour
 
     public Coroutine RoachCoroutine;
 
+    //reference to score text
+    public TextMeshProUGUI ScoreText;
+
+    //define the event squished
+    public static event Action Squished;
+
+   
     public void Start()
     {
+        PointerClick.AddListener(RoachSquished);
 
         rect = GetComponent<RectTransform>();
         //start the coroutine going from current position to endPos
         RoachCoroutine = StartCoroutine(RoachMove(transform.position, endPos));
 
-        //Add a listener so that the score scripts can track when the coroutine ends
-        PointerClick.AddListener(Squished);
+        
 
     }
 
@@ -76,20 +89,37 @@ public class Roach_Movment : MonoBehaviour
 
    
        
-        public void Squished()
+        public void RoachSquished()
     {
+        //if the roachCoroutine is null
         if (RoachCoroutine != null)
         {
+           //stop all coroutines
             StopAllCoroutines();
             RoachCoroutine = null;
+            //display the dead roach sprite
+            image.sprite = Dead;
+
+            //invoke the squished event
+            Squished?.Invoke();
+            //debug.log to make sure it is registering the event
             Debug.Log("squished");
-            image.sprite = Dead;  
-            
-            
+           
+
+
+           
+
         }
+
+
+        
     }
+
+    
+
 
 }
 
     
+
 

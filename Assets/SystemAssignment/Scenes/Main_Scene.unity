@@ -216,7 +216,6 @@ RectTransform:
   m_LocalScale: {x: 0, y: 0, z: 0}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 726510685}
   - {fileID: 1229144035}
   - {fileID: 598752749}
   - {fileID: 1921325021}
@@ -419,7 +418,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 598752751}
           m_TargetAssemblyTypeName: Roach_Movment, Assembly-CSharp
-          m_MethodName: Squished
+          m_MethodName: RoachSquished
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -473,8 +472,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   timeElapsed: 4
   image: {fileID: 598752752}
-  Alive: {fileID: -1492256074, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
-  Dead: {fileID: -138209937, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
+  Alive: {fileID: 21300000, guid: a4efe4dba3aecc44389238d9bb17c81c, type: 3}
+  Dead: {fileID: 21300000, guid: 4514b9f08d6739f478a196ba776771e9, type: 3}
+  ScoreText: {fileID: 0}
 --- !u!114 &598752752
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -495,7 +495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1492256074, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4efe4dba3aecc44389238d9bb17c81c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -616,9 +616,8 @@ GameObject:
   - component: {fileID: 726510685}
   - component: {fileID: 726510687}
   - component: {fileID: 726510686}
-  - component: {fileID: 726510689}
   m_Layer: 5
-  m_Name: Score
+  m_Name: ScoreText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,16 +630,16 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726510684}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 12.816745}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
-  m_Father: {fileID: 30557134}
+  m_Father: {fileID: 2049901689}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 166.01239, y: 37.743683}
+  m_AnchoredPosition: {x: -350.5251, y: -200.3537}
   m_SizeDelta: {x: 331.358, y: 75.4874}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &726510686
@@ -740,21 +739,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 726510684}
   m_CullTransparentMesh: 1
---- !u!114 &726510689
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 726510684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f7aaf965af724104581d45dd78c61a76, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScoreUI: {fileID: 726510686}
-  Score: 0
-  RoachMovmentScript: {fileID: 0}
 --- !u!1 &892148603
 GameObject:
   m_ObjectHideFlags: 0
@@ -1002,7 +986,7 @@ MonoBehaviour:
         m_Calls:
         - m_Target: {fileID: 1229144037}
           m_TargetAssemblyTypeName: Roach_Movment, Assembly-CSharp
-          m_MethodName: Squished
+          m_MethodName: RoachSquished
           m_Mode: 1
           m_Arguments:
             m_ObjectArgument: {fileID: 0}
@@ -1056,8 +1040,9 @@ MonoBehaviour:
     m_RotationOrder: 4
   timeElapsed: 4
   image: {fileID: 1229144038}
-  Alive: {fileID: -1492256074, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
-  Dead: {fileID: -138209937, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
+  Alive: {fileID: 21300000, guid: a4efe4dba3aecc44389238d9bb17c81c, type: 3}
+  Dead: {fileID: 21300000, guid: 4514b9f08d6739f478a196ba776771e9, type: 3}
+  ScoreText: {fileID: 0}
 --- !u!114 &1229144038
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1078,7 +1063,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -1492256074, guid: 529af4bdebfb57844ac40648c60dbc05, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a4efe4dba3aecc44389238d9bb17c81c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -1096,6 +1081,37 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1229144034}
   m_CullTransparentMesh: 1
+--- !u!1 &1585726402
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1585726403}
+  m_Layer: 0
+  m_Name: 'GameManger '
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1585726403
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1585726402}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 679.00195, y: 370.27777, z: -3.3386478}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1729644807
 GameObject:
   m_ObjectHideFlags: 0
@@ -1307,6 +1323,55 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1921325020}
   m_CullTransparentMesh: 1
+--- !u!1 &2049901687
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2049901689}
+  - component: {fileID: 2049901688}
+  m_Layer: 0
+  m_Name: Score Manager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &2049901688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049901687}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f7aaf965af724104581d45dd78c61a76, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ScoreText: {fileID: 726510686}
+  Amount: 1
+  Score: 0
+  winScreen: {fileID: 0}
+--- !u!4 &2049901689
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2049901687}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 516.5375, y: 238.09737, z: -12.816745}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 726510685}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &2071009143
 GameObject:
   m_ObjectHideFlags: 0
@@ -1363,3 +1428,5 @@ SceneRoots:
   - {fileID: 2071009145}
   - {fileID: 30557134}
   - {fileID: 892148606}
+  - {fileID: 2049901689}
+  - {fileID: 1585726403}
